@@ -5,19 +5,20 @@
         <div class="subContainer">
           <v-row>
             <v-col>
-              <h1 class="heading primary--text">About me</h1>
+              <h1 class="heading primary--text">My Skills </h1>
             </v-col>
           </v-row>
           <v-row>
             <v-col>
-              <p>Technology Enthusiast. Passionate in evolution of the internet.</p>
+              <p>The main area of my expertise is front end development (client side of the web).</p>
               <p>
-                My interest lays with the developement of the internet. I specialise in front end developement and have built back end solutions to my
-                projects using NodeJS.
+                HTML, CSS, JS (TypeScript), building small and medium web apps with Angular 2+, custom plugins, features, animations, and coding
+                interactive layouts.
               </p>
+              <p>I have also full-stack developer experience with open source CMS like (WordPress, Drupal, Magento, Keystone.js and other)</p>
               <p>
-                I also like to tinker around with the decentralized web. This site is hosted and accessed from the IPFS network. I'm also interested
-                in cryptocurrencies and trading.
+                Visit my <a href="https://www.linkedin.com/in/sebastianwhitlock/">LinkedIn </a>profile for more details or just
+                <a @click="e.preventDefault()" to="/contact">contact </a>me.
               </p>
             </v-col>
           </v-row>
@@ -25,7 +26,7 @@
       </v-col>
       <v-col class="base center">
         <transition name="fade">
-          <Timeline v-if="toggle" />
+          <Cloud v-if="toggle" />
         </transition>
       </v-col>
     </v-row>
@@ -33,10 +34,10 @@
 </template>
 
 <script>
-import Timeline from "../components/Timeline";
+import Cloud from "../components/Cloud";
 export default {
   components: {
-    Timeline,
+    Cloud,
   },
   data() {
     return {

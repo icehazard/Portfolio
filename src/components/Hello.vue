@@ -5,27 +5,29 @@
         <div class="subContainer">
           <v-row>
             <v-col>
-              <h1 class="heading primary--text">About me</h1>
+              <div class="d-flex">
+                <h1 class="primary--text mr-5">Hello.</h1>
+                <h1>I am</h1>
+              </div>
+              <h1>Sebastian Whitlock.</h1>
+              <h1>A Web Developer.</h1>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col class="pt-0">
+              <div class="overline grey--text ">&lt; Front End Software Engineer / Javascript Developer /&gt;</div>
             </v-col>
           </v-row>
           <v-row>
             <v-col>
-              <p>Technology Enthusiast. Passionate in evolution of the internet.</p>
-              <p>
-                My interest lays with the developement of the internet. I specialise in front end developement and have built back end solutions to my
-                projects using NodeJS.
-              </p>
-              <p>
-                I also like to tinker around with the decentralized web. This site is hosted and accessed from the IPFS network. I'm also interested
-                in cryptocurrencies and trading.
-              </p>
+              <v-btn to="/contact" outlined color="primary">Contact Me</v-btn>
             </v-col>
           </v-row>
         </div>
       </v-col>
       <v-col class="base center">
         <transition name="fade">
-          <Timeline v-if="toggle" />
+          <img v-if="toggle" src="https://res.cloudinary.com/dorhsrqla/image/upload/v1593126064/New_Project_2_yg2tvk.png" alt="SW" />
         </transition>
       </v-col>
     </v-row>
@@ -33,10 +35,10 @@
 </template>
 
 <script>
-import Timeline from "../components/Timeline";
+import Form from "../components/Form";
 export default {
   components: {
-    Timeline,
+    Form,
   },
   data() {
     return {
