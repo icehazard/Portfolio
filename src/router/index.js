@@ -16,17 +16,23 @@ const routes = [
   },
   {
     path: "/skills",
+  
     name: "Skills",
     component: () => import("../views/Skills.vue"),
   },
   {
-    path: "/works",
-    alias: "/works/",
+    path: "/works/",
+    
+    redirect: "works/bocachica",
+  },
+  {
+    path: "/works/:id",
+
     redirect: "works/bocachica",
     component: () => import("../views/Works.vue"),
     children: [
       {
-        path: "/works/:id",
+        path: "",
         name: "works",
         component: () => import("../components/Showcase.vue"),
       },

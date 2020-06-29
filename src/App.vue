@@ -2,8 +2,8 @@
   <v-app :style="{ background: $vuetify.theme.themes[theme].background }">
     <Navigation />
     <v-main>
-      <transition :name="transitionName" mode="out-in" @beforeLeave="beforeLeave" @enter="enter">
-        <router-view />
+      <transition :name="transitionName" mode="out-in" @beforeRouteLeave="beforeLeave" @enter="enter">
+        <router-view :key="$route.fullPath" />
       </transition>
     </v-main>
   </v-app>
@@ -25,7 +25,7 @@ export default {
   },
   created() {
     this.$router.beforeEach((to, from, next) => {
-    console.log("created -> next", to)
+
       this.transitionName = "slide-left";
       if (to.name == "works" && from.name == "works") this.transitionName = "fade";
       next();
@@ -33,10 +33,11 @@ export default {
   },
   methods: {
     beforeLeave(element) {
-      console.log("beforeLeave -> element", element)
+      console.log("beforeLeave -> element", "leave")
       this.prevHeight = getComputedStyle(element).height;
     },
     enter(element) {
+           console.log("enter -> element", "enter")
       const { height } = getComputedStyle(element);
       element.style.height = this.prevHeight;
       setTimeout(() => {

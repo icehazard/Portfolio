@@ -17,8 +17,10 @@
             </v-chip>
           </p>
           <div>
-            <router-link class="ma-2" to="bocachica">boca</router-link>
-            <router-link class="ma-2" to="tanknite">tank</router-link>
+            <router-link class="ma-2" to="/works/bocachica">boca</router-link>
+            <v-btn @click="b()">b</v-btn>
+            <router-link class="ma-2" to="/works/tanknite">tank</router-link>
+              <v-btn @click="t()">t</v-btn>
           </div>
         </section>
       </v-col>
@@ -44,7 +46,7 @@ export default {
   data() {
     return {
       toggle: false,
-      data: {
+            data: {
         bocachica: {
           title: "Bocachica.io",
           img: "https://res.cloudinary.com/dorhsrqla/image/upload/v1593383908/shotsnapp-1593383790_jcejcs.png",
@@ -67,18 +69,39 @@ export default {
     };
     A;
   },
+  methods: {
+      b(){
+          this.$router.push({ name: 'works', params: { id: 'bocachica' } });
+      },
+      t(){
+      this.$router.push({ name: 'works', params: { id: 'tanknite' } });
+  },
+  },
+  
+  watch: {
+    $route(to, from) {
+    	console.log('watch $route is working too!');
+    }
+  },
 
   computed: {
     id() {
       return this.$route.params.id;
+   
     },
   },
   watch: {
     data: {
+      immediate: true,
+      handler(val, oldval) {
+        //
+      },
     },
   },
   mounted() {
     // this.$route.params.id ? this.$route.params.id : "boca", this.$router.push('/works/boca')
+
+    console.log(this.$route.params.id)
 
     setTimeout(() => {
       this.toggle = true;
@@ -101,7 +124,6 @@ a {
   z-index: 1;
   opacity: 0;
   transition: all 0.2s ease-in;
-  transition-delay: 1s;
 }
 
 .imageContainer:hover .middle {

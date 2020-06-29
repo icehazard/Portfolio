@@ -1,5 +1,7 @@
 <template>
-    <router-view :key="$route.fullPath"> </router-view>
+<transition name="fade" mode="out-in">
+    <router-view  :key="$route.params.id" > </router-view>
+</transition>
 </template>
 
 // <script>
