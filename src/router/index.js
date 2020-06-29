@@ -1,40 +1,52 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import('../views/Home.vue')
+    path: "/",
+    name: "Home",
+    component: () => import("../views/Home.vue"),
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
+    path: "/about",
+    name: "About",
+    component: () => import("../views/About.vue"),
   },
   {
-    path: '/skills',
-    name: 'Skills',
-    component: () => import('../views/Skills.vue')
+    path: "/skills",
+    name: "Skills",
+    component: () => import("../views/Skills.vue"),
   },
   {
-    path: '/works',
-    name: 'Works',
-    component: () => import('../views/Works.vue')
+    path: "/works",
+    alias: "/works/",
+    redirect: "works/bocachica",
+    component: () => import("../views/Works.vue"),
+    children: [
+      {
+        path: "/works/:id",
+        name: "works",
+        component: () => import("../components/Showcase.vue"),
+      },
+    ],
   },
   {
-    path: '/contact',
-    name: 'Contact',
-    component: () => import('../views/Contact.vue')
-  }
-]
+    path: "/contact",
+    name: "Contact",
+    component: () => import("../views/Contact.vue"),
+  },
+  // {
+  //   path: '/works',
+  //   redirect: 'Works',
+  //   component: () => import('../views/Works.vue')
+  // },
+];
 
 const router = new VueRouter({
-
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

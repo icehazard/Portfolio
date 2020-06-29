@@ -20,13 +20,16 @@ export default new Vuetify({
         secondary: "#1B3430",
         form: "#2B2B2B",
         navigation: "#181818",
-        background:"#1D1D1D"
+        background:"#1D1D1D",
+        text: "DADADA"
       },
       light: {
-        primary: "#08FDD8",
+        primary: "#1D1D1D",
         secondary: "#1B3430",
         navigation: "#181818",
-        background:"#EEEEEE"
+        background:"#EEEEEE",
+        text: "1D1D1D"
+      
       }
     },
     

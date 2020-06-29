@@ -47,7 +47,7 @@ export default {
       speed: 0.3,
       fontFamily: "Roboto, Arial, sans-serif",
       fontSize: "18px",
-      fontColor: "#fff",
+      fontColor: "var(--v-text-base)",
       fontWeight: "normal",
       fontStyle: "normal",
       fontStretch: "normal",

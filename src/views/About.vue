@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid fill-height>
+  <v-container >
     <v-row class="h-100">
       <v-col class="center">
         <div class="subContainer">

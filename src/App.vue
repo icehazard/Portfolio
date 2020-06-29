@@ -25,18 +25,15 @@ export default {
   },
   created() {
     this.$router.beforeEach((to, from, next) => {
-      let transitionName = to.meta.transitionName || from.meta.transitionName;
-      if (transitionName === "slide") {
-        const toDepth = to.path.split("/").length;
-        const fromDepth = from.path.split("/").length;
-        transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
-      }
-      this.transitionName = transitionName || "slide-left";
+    console.log("created -> next", to)
+      this.transitionName = "slide-left";
+      if (to.name == "works" && from.name == "works") this.transitionName = "fade";
       next();
     });
   },
   methods: {
     beforeLeave(element) {
+      console.log("beforeLeave -> element", element)
       this.prevHeight = getComputedStyle(element).height;
     },
     enter(element) {
