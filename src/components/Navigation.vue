@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer color="navigation" mini-variant permanent app >
+  <v-navigation-drawer color="navigation" mini-variant permanent app v-if="!$vuetify.breakpoint.xs">
     <v-container fill-height class=" d-flex flex-column pa-0">
       <v-list class="black w-100">
         <v-list-item class="pa-0">

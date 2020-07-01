@@ -1,5 +1,5 @@
 <template>
-    <Hello />
+    <Hello ref="hello"/>
 </template>
 
 <script>
@@ -10,6 +10,10 @@ export default {
   name: 'Home',
   components: {
     Hello
-  }
+  },
+  beforeRouteLeave(to, from, next) {
+    this.$refs.hello.prepareToExit();
+    setTimeout(() => {next();});
+  },
 }
 </script>

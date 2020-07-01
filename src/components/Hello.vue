@@ -1,13 +1,13 @@
 <template>
-  <v-container fluid fill-height>
-    <v-row class="h-100">
+  <v-container fluid fill-height class="pa-5 pa-sm-10">
+    <v-row class="d-flex flex-column flex-lg-row">
       <v-col class="center">
         <div class="subContainer">
           <v-row>
-            <v-col>
+            <v-col >
               <div class="d-flex">
                 <h1 class="primary--text mr-5">Hello.</h1>
-                <h1>I am</h1>
+                <h1 class="no-wrap">I am</h1>
               </div>
               <h1>Sebastian Whitlock.</h1>
               <h1>A Web Developer.</h1>
@@ -25,9 +25,15 @@
           </v-row>
         </div>
       </v-col>
-      <v-col class="base center">
+      <v-col class="base center pt-15   pa-lg-15">
         <transition name="fade">
-          <img v-if="toggle" src="https://res.cloudinary.com/dorhsrqla/image/upload/v1593126064/New_Project_2_yg2tvk.png" alt="SW" />
+          <img
+            @load="showImage = true"
+            v-show="showImage"
+            src="https://res.cloudinary.com/dorhsrqla/image/upload/v1593126064/New_Project_2_yg2tvk.png"
+            alt="SW"
+            class=" "
+          />
         </transition>
       </v-col>
     </v-row>
@@ -36,30 +42,34 @@
 
 <script>
 import Form from "../components/Form";
+
 export default {
   components: {
     Form,
   },
   data() {
     return {
-      toggle: false,
+      showImage: false,
     };
   },
-  beforeRouteLeave(to, from, next) {
-    this.toggle = false;
-    setTimeout(() => {
-      next();
-    });
-  },
-
-  mounted() {
-    setTimeout(() => {
-      this.toggle = true;
-    }, 200);
+  methods: {
+    prepareToExit: function() {
+      this.showImage = false;
+    },
   },
 };
 </script>
 
 <style lang="less" scoped>
+
+img{
+   max-width: 100%;
+  height: auto;
+}
+
+
+
+
+
 
 </style>

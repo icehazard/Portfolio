@@ -4,6 +4,12 @@ import Vuetify from 'vuetify/lib';
 Vue.use(Vuetify);
 
 export default new Vuetify({
+  breakpoint: {
+    thresholds: {
+      xs: 600
+    },
+    scrollbarWidth: 10
+  },
   
   icons: {
     iconfont: 'mdi',

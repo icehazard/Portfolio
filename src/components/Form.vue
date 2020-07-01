@@ -17,25 +17,25 @@
       <v-col>
         <v-row>
           <v-col class="pr-1">
-            <v-text-field filled hide-details placeholder="Name" background-color="form"></v-text-field>
+            <v-text-field label="Name" filled hide-details  background-color="form"></v-text-field>
           </v-col>
           <v-col class="pl-1">
-            <v-text-field filled hide-details placeholder="Email" background-color="form"></v-text-field>
+            <v-text-field filled hide-details label="Email" background-color="form"></v-text-field>
           </v-col>
         </v-row>
         <v-row>
           <v-col class="py-0">
-            <v-text-field filled hide-details placeholder="Subject" background-color="form"></v-text-field>
+            <v-text-field filled hide-details label="Subject" background-color="form"></v-text-field>
           </v-col>
         </v-row>
         <v-row>
           <v-col>
-            <v-textarea filled placeholder="Message" background-color="form"></v-textarea>
+            <v-textarea filled label="Message" background-color="form"></v-textarea>
           </v-col>
         </v-row>
         <v-row>
           <v-col class="py-0 d-flex justify-end">
-            <v-btn small color="primary" outlined>send</v-btn>
+            <v-btn  color="primary" outlined>send</v-btn>
           </v-col>
         </v-row>
       </v-col>

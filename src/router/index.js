@@ -16,23 +16,17 @@ const routes = [
   },
   {
     path: "/skills",
-  
+
     name: "Skills",
     component: () => import("../views/Skills.vue"),
   },
   {
-    path: "/works/",
-    
-    redirect: "works/bocachica",
-  },
-  {
-    path: "/works/:id",
-
+    path: "/works",
     redirect: "works/bocachica",
     component: () => import("../views/Works.vue"),
     children: [
       {
-        path: "",
+        path: ":id",
         name: "works",
         component: () => import("../components/Showcase.vue"),
       },
@@ -43,11 +37,6 @@ const routes = [
     name: "Contact",
     component: () => import("../views/Contact.vue"),
   },
-  // {
-  //   path: '/works',
-  //   redirect: 'Works',
-  //   component: () => import('../views/Works.vue')
-  // },
 ];
 
 const router = new VueRouter({

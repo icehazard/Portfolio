@@ -25,7 +25,7 @@
       </v-col>
       <v-col class="base center">
         <transition name="fade">
-          <Timeline v-if="toggle" />
+          <Timeline v-show="toggle" />
         </transition>
       </v-col>
     </v-row>
@@ -40,7 +40,7 @@ export default {
   },
   data() {
     return {
-      toggle: false,
+      toggle: true,
     };
   },
   beforeRouteLeave(to, from, next) {

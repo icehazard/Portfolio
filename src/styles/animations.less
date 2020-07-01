@@ -1,0 +1,49 @@
+//Fade
+.fade-enter-active {
+  transition: opacity 2s;
+}
+
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+//Showcase
+.showcase-enter-active {
+  transition: opacity 0.3s;
+}
+
+.showcase-leave-active {
+  transition: opacity 0.3s;
+}
+.showcase-enter,
+.showcase-leave-to {
+  opacity: 0;
+}
+
+//Slide
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition-duration: 0.5s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate(10em, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-10em, 0);
+}

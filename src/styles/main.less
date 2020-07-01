@@ -17,6 +17,14 @@ body {
   justify-content: center;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.no-wrap{
+  white-space: nowrap;
+}
+
 .container {
   max-width: 100%;
   padding: 0 50px;
@@ -42,27 +50,25 @@ body {
   user-select: none;
 }
 
-.overflow {
-  overflow: hidden;
+h1 {
+  font-size: 2em;
 }
 
-h1 {
-  font-size: 4em;
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 3em;
+  }
+}
+@media only screen and (min-width: 1264px) {
+  h1 {
+    font-size: 4em;
+  }
 }
 
 a {
   text-decoration: none;
 }
 
-.fade-enter-active  {
-  transition: opacity 2s;
-}
-
-.fade-leave-active {
-  transition: opacity 1s;
-  
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
+.v-application {
+  background-color: var(--v-background-base) !important;
 }
